@@ -33,6 +33,7 @@ class PodcastPDF:
         pdf.set_font("Arial", size=14, style='U')
         link_text = '[DOWNLOAD AUDIO]'
         pdf.text(x=11, y=32, txt=link_text)
+        # https://github.com/PyFPDF/fpdf2/issues/64#issuecomment-764470674
         pdf.link(x=11, y=27, w=pdf.get_string_width(link_text), h=5, link=self._podcast.audio)
 
         cover_path = self._download_cover()
